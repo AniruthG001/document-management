@@ -1,21 +1,13 @@
 import { Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { Role } from './role/role.entity';
+import { DatabaseModule } from './database/database.module';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot({
-      type: 'postgres',
-      host: '127.0.0.1', // or 'localhost'
-      port: 5432, // Default PostgreSQL port
-      username: 'postgres', // Your PostgreSQL username
-      password: 'postgres', // Your PostgreSQL password
-      database: 'documentdb', // Your database name
-      entities: [Role], // Add your entity classes here
-      synchronize: true, // Set to true for auto-sync (development only)
-    }),
+    DatabaseModule,
+    Role
   ],
   controllers: [AppController],
   providers: [AppService],
