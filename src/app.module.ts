@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { Role } from './role/role.entity';
 
 @Module({
   imports: [
@@ -12,7 +13,7 @@ import { AppService } from './app.service';
       username: 'postgres', // Your PostgreSQL username
       password: 'postgres', // Your PostgreSQL password
       database: 'documentdb', // Your database name
-      entities: [], // Add your entity classes here
+      entities: [Role], // Add your entity classes here
       synchronize: true, // Set to true for auto-sync (development only)
     }),
   ],

@@ -1,0 +1,16 @@
+{
+  "data": [
+      {
+        "name": "admin",
+        "isActive": true
+      },
+      {
+        "name": "editor",
+        "isActive": true
+      },
+      {
+        "name": "viewer",
+        "isActive": true
+      }
+    ]
+}
